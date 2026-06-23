@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <style>
+    :root {
+      --bg-color: #ffffff;
+      --text-color: #333333;
+      --border-color: #cccccc;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg-color: #2b2a33;
+        --text-color: #fbfbfe;
+        --border-color: #52525e;
+      }
+    }
+    body { 
+      font-family: system-ui, -apple-system, sans-serif; 
+      width: 240px; 
+      padding: 16px; 
+      margin: 0; 
+      background-color: var(--bg-color);
+      color: var(--text-color);
+    }
+    .control-group { margin-bottom: 16px; }
+    .control-group:last-child { margin-bottom: 0; }
+    label.title { 
+      font-weight: 600; 
+      font-size: 13px; 
+      display: block; 
+      margin-bottom: 6px;
+    }
+    select { 
+      width: 100%; 
+      padding: 6px 8px; 
+      font-size: 14px; 
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+    }
+    .checkbox-label {
+      display: flex;
+      align-items: center;
+      font-weight: normal;
+      font-size: 13px;
+      cursor: pointer;
+    }
+    .checkbox-label input {
+      margin-right: 8px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="control-group">
+    <label class="title" for="timeRange">Zeitraum der Suche:</label>
+    <select id="timeRange">
+      <option value="qdr:w">Letzte Woche</option>
+      <option value="qdr:m">Letzter Monat</option>
+      <option value="qdr:y">Letztes Jahr</option>
+    </select>
+  </div>
+  <div class="control-group">
+    <label class="checkbox-label">
+      <input type="checkbox" id="excludeExpired"> 
+      Abgelaufene Deals ausblenden
+    </label>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
